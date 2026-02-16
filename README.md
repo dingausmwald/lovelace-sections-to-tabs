@@ -2,6 +2,8 @@
 
 Home Assistant custom card that automatically converts sections into a tab bar based on browser resolution.
 
+<img width="655" height="451" alt="image" src="https://github.com/user-attachments/assets/b4a04f16-c993-4982-a9df-a25b39b6f0c8" /><img width="672" height="452" alt="image" src="https://github.com/user-attachments/assets/a6fde9cc-912a-4ddf-94ad-c791af7ca7de" />
+
 ## Installation
 
 ### HACS (recommended)
