@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sections to Tabs Card - Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #fafafa;
+    }
+
+    /* Mock HA CSS variables */
+    :root {
+      --card-background-color: #fff;
+      --divider-color: #e0e0e0;
+      --primary-color: #03a9f4;
+      --primary-text-color: #212121;
+      --secondary-background-color: #f5f5f5;
+    }
+
+    /* Mock sections structure */
+    hui-sections-view {
+      display: block;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    hui-section {
+      display: block;
+      background: white;
+      padding: 16px;
+      margin-bottom: 16px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    hui-section h2 {
+      margin: 0 0 16px 0;
+      color: var(--primary-text-color);
+    }
+
+    .mock-card {
+      padding: 16px;
+      background: #f5f5f5;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <hui-sections-view>
+    <sections-to-tabs-card id="card"></sections-to-tabs-card>
+
+    <hui-section id="section1">
+      <h2>Steuerung</h2>
+      <div class="mock-card">Button 1</div>
+      <div class="mock-card">Button 2</div>
+    </hui-section>
+
+    <hui-section id="section2">
+      <h2>Medien</h2>
+      <div class="mock-card">Media Player</div>
+    </hui-section>
+
+    <hui-section id="section3">
+      <h2>Klima</h2>
+      <div class="mock-card">Thermostat</div>
+    </hui-section>
+  </hui-sections-view>
+
+  <script type="module">
+    import './src/sections-to-tabs-card.ts';
+
+    // Mock section config
+    document.getElementById('section1').config = { name: 'steuerung' };
+    document.getElementById('section2').config = { name: 'medien' };
+    document.getElementById('section3').config = { name: 'klima' };
+
+    // Configure card
+    const card = document.getElementById('card');
+    card.setConfig({
+      type: 'custom:sections-to-tabs-card',
+      media_query: '(max-width: 768px)',
+      tabs: [
+        {
+          section_name: 'steuerung',
+          title: 'Steuerung',
+          icon: 'mdi:toggle-switch'
+        },
+        {
+          section_name: 'medien',
+          title: 'Medien',
+          icon: 'mdi:television'
+        },
+        {
+          section_name: 'klima',
+          title: 'Klima',
+          icon: 'mdi:thermometer'
+        }
+      ]
+    });
+  </script>
+</body>
+</html>
