@@ -95,3 +95,7 @@ tabs:
 - Tab order controlled via config
 - Sidebar-aware positioning (adapts to collapsed sidebar)
 - Minimal dependencies (Lit 3.0 only)
+
+---
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/dingausmwald)
